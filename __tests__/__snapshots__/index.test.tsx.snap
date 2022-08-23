@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <main
+      class="container"
+    >
+      <h1
+        class="merchant-name"
+      >
+        Merchant Foo
+      </h1>
+      <div
+        class="balance"
+      >
+        <span
+          class="balance__amount"
+        >
+          0
+        </span>
+         
+        <span
+          class="balance__currency"
+        >
+          EUR
+        </span>
+      </div>
+      <div
+        class="range-picker"
+      >
+        <button
+          class="range-picker__range"
+        >
+          1D
+        </button>
+        <button
+          class="range-picker__range"
+        >
+          5D
+        </button>
+        <button
+          class="range-picker__range"
+        >
+          1M
+        </button>
+        <button
+          class="range-picker__range selected"
+        >
+          3M
+        </button>
+        <button
+          class="range-picker__range"
+        >
+          6M
+        </button>
+      </div>
+    </main>
+  </div>
+</div>
+`;

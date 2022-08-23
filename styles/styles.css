@@ -1,0 +1,76 @@
+:root {
+  --green: #42f5a1
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 1rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.merchant-name {
+  margin: 0.25rem 0;
+  font-size: 1.5rem
+}
+
+.range-picker {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+}
+
+.range-picker__range {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  font-weight: 600;
+  color: white;
+  transition: background, border .1s;
+  cursor: pointer;
+}
+
+.range-picker__range:hover {
+  border-bottom: 2px solid var(--green);
+  margin-bottom: -2px;
+  background-color: #42f5a133;
+}
+
+.balance {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.balance__amount {
+  font-size: 3.5rem;
+}
+
+.balance__currency{
+  color: #c1c1c1;
+}
+
+.selected {
+  border-bottom: 2px solid var(--green);
+  margin-bottom: -2px;
+}
