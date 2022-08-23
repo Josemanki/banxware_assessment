@@ -8,7 +8,7 @@ export const formatDate = (dateStr: Date) => {
 // Returns transactions that are within the given timeframe from the transaction list
 // The gist being filtering the transaction list, and comparing the given timeframe
 // with the current day/month minus the number. Returns if the date of the trx is bigger.
-export const getTimeframe = (transactions: ITransaction[], dateRange: TDateRange): ITransaction[] => {
+export const getTimeframe = (transactions: ITransaction[] = [], dateRange: TDateRange = '3M'): ITransaction[] => {
   switch (dateRange) {
     case '1D':
       return transactions.filter((trx) => new Date(trx.date) > new Date(new Date().setDate(new Date().getDate() - 1)));

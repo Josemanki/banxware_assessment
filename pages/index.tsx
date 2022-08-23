@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Chart from '../components/Chart';
 import Balance from '../components/Balance';
 import RangePicker from '../components/RangePicker';
-import { TBalance, TDateRange, ITransaction, THistoricBalance } from '../types';
+import { TBalance, TDateRange, ITransaction } from '../types';
 import { getHistoricBalance, getTimeframe } from '../utils/utils';
 
 const Home: NextPage = () => {
@@ -14,12 +14,11 @@ const Home: NextPage = () => {
   const [range, setRange] = useState<TDateRange>('3M');
   const [transactions, setTransactions] = useState<ITransaction[]>([]);
   const [balance, setBalance] = useState<TBalance>({ amount: 0, currency: 'EUR' });
-  const [chartData, setChartData] = useState<THistoricBalance[]>([]);
+  let chartData = getHistoricBalance(getTimeframe(transactions, range), balance.amount);
 
   // Processes raw data though getHistoricBalance within the given timeframe to output chart data.
   useEffect(() => {
-    const newChartData = getHistoricBalance(getTimeframe(transactions, range), balance.amount);
-    setChartData(newChartData);
+    chartData = getHistoricBalance(getTimeframe(transactions, range), balance.amount);
   }, [balance, range]);
 
   // Calls /api/getRawData API to take raw data and use as proxy.
